@@ -1,1 +1,173 @@
+/* font: */
+//@import url('https://fonts.googleapis.com/css?family=Dosis:500');
 
+/* colors */
+$border-bottom:#ADFFFC;
+$icon:#5690F5;
+// body
+
+/* helpers */
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after, .clearfix:before{
+	clear: both;
+}
+
+// wrapper:
+.wrapper {
+  width:1400px;
+  max-width:90%;
+  margin:0 auto;
+  height: auto;
+}
+/* design de la partie header:*/
+.header {
+  border-bottom: 4px solid $border-bottom;
+  .ui.menu {
+    height: 60px;
+  }
+}
+
+/* design de la partie content :*/
+.content {
+  h1 {
+    //font-family: "proxima nova soft" ,sans-serif;
+    font-size: 30px;
+    text-align: center;
+    font-size:3.2em;
+  }
+  .content-image {
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      //border: 2px solid $border-bottom;
+      border-radius:0.4em;
+      width:75%;
+    }
+  }
+  h2 {
+    span {
+        font-size: 35px;
+    }
+    text-align:center;
+    font-size:20px;
+  }
+  .content-fonction {
+		margin-top: 5em;
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      font-size:3.2em;
+    }
+    .content-fonction-items {
+          width: auto;
+      .content-fonction-item {
+        width:32%;
+        display:inline-block;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .content-fonction-item .far, .fas{
+          color:$icon;
+          font-size: 50px;
+          margin-left:3.2em;
+      }
+      .content-fonction-item p,h4 {
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+  }
+}
+.structure-items{
+	margin-top: 5em;
+	h1 {
+		text-align:center;
+		font-size:40px;
+	}
+	.struct-item {
+		display: inline-block;
+		width: 25%;
+		height: 200px;
+		//border:2px solid $border-bottom;
+	}
+	.struct-item:nth-child(odd) { // odd:repesente le nbr impaire item
+		margin-left: 3em;
+		margin-right:3em;
+		margin-top: 3em;
+	}
+	.struct-item:nth-child(even) { //even:represente le nbr paire item
+		margin-left: 3em;
+		margin-right:3em;
+		margin-top: 3em;
+	}
+	.struct-item .struct-item-image{
+			width:300px;
+			height: 150px;
+			//border:2px solid $border-bottom;
+	}
+	.struct-item p {
+		margin-top: 1em;
+		text-align: center;
+		font-size: 20px;
+	}
+}
+/* fin design partie content*/
+
+/* design de la partie footer */
+.footer {
+	margin-top: 5em;
+	width: 100%;
+	height: auto;
+	.footer-border {
+		display: block;
+		width: 600px;
+		margin-left:auto;
+		margin-right: auto;
+		border-bottom: 4px solid $border-bottom;
+		border-radius: 0.3em;
+	}
+	.footer-nav {
+		margin-left:10em;
+		margin-right:10em;
+	}
+	.footer-nav ul {
+		margin-top: 5em;
+		display: inline-block;
+		width: 30%;
+	}
+	.footer-nav ul>p {
+		font-size: 20px;
+	}
+	.footer-nav ul>li {
+		list-style: none;
+		color: #929292;
+	}
+	.langue {
+		margin-top: 5em;
+		margin-right: 5em;
+		float: right;
+		border: 1px solid #B6B6B6;
+		border-radius: 0.2em;
+		width: 150px;
+		height: 35px;
+	}
+	.langue .fa-globe-africa{
+		margin-left: 1.1em;
+		margin-right:-1.1em;
+		color:$icon;
+	}
+	.langue ul{
+		margin-top:0.7em;
+		margin-bottom: auto;
+	}
+	.langue ul>li:not(.active) {
+		display:none;
+	}
+}
+
+
+/* fin design de la partie footer*/
