@@ -1,0 +1,35 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+  <div class="ui raised very padded text container segment">
+    <h1 class="ui dividing header">ajouter votre infomation</h1>
+    <form class="ui fluid form" action="." method="post">
+      <div class="ui field">
+        <label for="">nom de structure</label>
+        <input type="text" name="" value="" placeholder="nom de structure">
+      </div>
+      <div class="ui field">
+        <label for="">type de structure</label>
+        <input type="text" name="" value="" placeholder="type de structure">
+      </div>
+      <div class="ui field">
+        <label for="">adresse</label>
+        <input type="text" name="" value="" placeholder="nom de structure">
+      </div>
+      <div class="ui field">
+        <label for="">telephone</label>
+        <input type="text" name="" value="" placeholder="telephone">
+      </div>
+      <h2 class="ui dividing header">ajouter des services</h2>
+      <div class="ui field">
+        <label for="">nom de service</label>
+        <input type="text" name="" value="" placeholder="nom de service">
+      </div>
+      <div class="ui field">
+        <label for="">durée</label>
+        <input type="text" name="" value="" placeholder="durée">
+      </div>
+      <input class="ui submit button blue" type="submit" name="valider" value="valider">
+    </form>
+  </div>
+{% endblock %}

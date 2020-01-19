@@ -1,0 +1,18 @@
+<!--début de l'entete du site  -->
+<div class="header">
+  <div class="ui stackable menu">
+    <div class="item">
+      <a href="{% url 'bookili:accueil' %}">Accueil</a>
+    </div>
+    <a href="{% url 'bookili:features' %}"class="item">Fonctionnalités</a>
+    <a href="{% url 'bookili:tarifs' %}"class="item">Tarifs</a>
+    <a href="{% url 'bookili:inscription' %}"class="item">S'inscrite</a>
+    <a href="{% url 'bookili:login' %}"class="item">Se connecter</a>
+    <div class="ui category search item">
+      <div class="ui transparent icon input">
+        <input class="prompt" type="text" placeholder="Recherche...">
+        <i class="search link icon"></i>
+      </div>
+   </div>
+  </div>
+</div>

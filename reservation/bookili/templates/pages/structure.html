@@ -1,0 +1,13 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+  <div class="ui raised very padded text container segment">
+    <form class="ui fluid form" method="post" action=".">
+      {% csrf_token %}
+      <div class="ui field">
+        {{form}}
+      </div>
+      <input class="ui submit button blue" type="submit" name="valider" value="valider">
+    </form>
+  </div>
+{% endblock %}

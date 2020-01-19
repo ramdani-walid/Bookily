@@ -1,0 +1,61 @@
+{% load static %}
+<!--début de corps du site -->
+<div class="wrapper">
+  <div class="content">
+    <h1>systeme de réservation en ligne</h1>
+    <div class="content-image">
+      <img src="{% static "images/intro.jpg" %}" alt="">
+    </div>
+    <h2> <span>Plus de rendez-vous, moins de planifications </span> </br> </br>
+      Le calendrier des planifications et le téléphone ne répondent plus aux besoins de vos clients.</br>
+      Passez à un système de réservation puissant et simple.</h2>
+    <div class="content-fonction">
+      <h1>Fonctionnalités</h1>
+      <div class="content-fonction-items" clearfix>
+        <div class="content-fonction-item">
+          <i class="far fa-calendar-alt"></i>
+          <h4> calendrier</h4>
+          <p class="description">planification des rendez-vous</p>
+        </div>
+        <div class="content-fonction-item">
+          <i class="fas fa-book"></i>
+          <h4>Reservation en ligne</h4>
+          <p class="description">Bookily accepte les réservations 24h/7</p>
+        </div>
+        <div class="content-fonction-item">
+          <i class="fas fa-users"></i>
+          <h4>Gestion des clients</h4>
+          <p class="description">bookily offre un aperçu clair des clients</p>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="structure-items">
+    <h1>Type de structures qui utilisent Bookily</h1>
+    <div class="struct-item">
+      <div class="struct-item-image">
+        <img src="{% static "images/medical.jpg"%}" alt="">
+      </div><p>Médical</p></div>
+    <div class="struct-item">
+      <div class="struct-item-image">
+        <img src="{% static "images/soins.jpg"%}"alt="">
+      </div><p>Beauté & soins</p></div>
+    <div class="struct-item">
+      <div class="struct-item-image">
+        <img src="{% static "images/sport.jpg"%}"alt="">
+      </div><p>Sport & loisirs</p></div>
+    <div class="struct-item">
+      <div class="struct-item-image">
+        <img src="{% static "images/culture.jpg"%}"alt="">
+      </div><p>Culture</p></div>
+    <div class="struct-item">
+      <div class="struct-item-image">
+        <img src="{% static "images/cours.jpg"%}"alt="">
+      </div><p>Cours & Education</p></div>
+    <div class="struct-item">
+      <div class="struct-item-image">
+        <img src="{% static "images/autre.jpg"%}"alt="">
+      </div><p>Autres</p></div>
+  </div>
+</div>
+<!--fin du corps du site -->

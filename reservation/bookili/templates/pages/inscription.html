@@ -1,0 +1,14 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+  <div class="ui raised very padded text container segment">
+    <form class="ui fluid form" method="post" action=".">
+      {% csrf_token %}
+      <div class="ui field">
+        {{form}}
+      </div>
+      <input class="ui submit button blue" type="submit" name="valider" value="valider">
+    <p>vous avez déja un compte? <a href="{% url 'bookili:login' %}">connecter vous</a></p>
+    </form>
+  </div>
+{% endblock %}
