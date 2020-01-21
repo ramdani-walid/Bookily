@@ -40,7 +40,7 @@ class Demander(models.Model):
     client_idclient = models.ForeignKey(Client, models.DO_NOTHING, db_column='CLIENT_idCLIENT')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'DEMANDER'
         unique_together = (('service_idservice', 'client_idclient'),)
 
@@ -50,7 +50,7 @@ class Proprietaire(models.Model):
     numero_telephone = models.IntegerField(db_column='NUMERO_TELEPHONE', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'PROPRIETAIRE'
 
 
@@ -62,18 +62,22 @@ class Rdv(models.Model):
     structure_idstructure = models.ForeignKey('Structure', models.DO_NOTHING, db_column='STRUCTURE_idSTRUCTURE')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'RDV'
 
 
 class Service(models.Model):
     idservice = models.AutoField(db_column='idSERVICE', primary_key=True)  # Field name made lowercase.
     nom_service = models.CharField(db_column='NOM_SERVICE', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    duree_service = models.CharField(db_column='DUREE_SERVICE', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    duree_service = models.TimeField(db_column='DUREE_SERVICE',blank=True, null=True)  # Field name made lowercase.
     structure_idstructure = models.ForeignKey('Structure', models.DO_NOTHING, db_column='STRUCTURE_idSTRUCTURE')  # Field name made lowercase.
+    userpropr_id = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nom_service
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'SERVICE'
 
 
@@ -82,7 +86,7 @@ class Servir(models.Model):
     staff_idstaff = models.ForeignKey('Staff', models.DO_NOTHING, db_column='STAFF_idSTAFF')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'SERVIR'
         unique_together = (('service_idservice', 'staff_idstaff'),)
 
@@ -94,7 +98,7 @@ class Staff(models.Model):
     structure_idstructure = models.ForeignKey('Structure', models.DO_NOTHING, db_column='STRUCTURE_idSTRUCTURE')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'STAFF'
 
 
@@ -103,7 +107,7 @@ class Structure(models.Model):
     nom_struct = models.CharField(db_column='NOM_STRUCT', max_length=45, blank=True, null=True)  # Field name made lowercase.
     adresse_struct = models.CharField(db_column='ADRESSE_STRUCT', max_length=45, blank=True, null=True)  # Field name made lowercase.
     catergorie_structure_idcatergorie_structure = models.ForeignKey(CatergorieStructure, models.DO_NOTHING, db_column='CATERGORIE_STRUCTURE_idCATERGORIE_STRUCTURE')  # Field name made lowercase.
-    code_postal = models.TextField(db_column='CODE_POSTAL', blank=True, null=True)  # Field name made lowercase.
+    code_postal = models.SmallIntegerField(db_column='CODE_POSTAL', blank=True, null=True)  # Field name made lowercase.
     userpropr = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
