@@ -20,6 +20,10 @@
   .header .ui.menu {
     height: 60px; }
 
+#username, #deconnexion {
+  float: right;
+  color: #5690F5; }
+
 /* design de la partie content :*/
 .content h1 {
   font-size: 30px;
