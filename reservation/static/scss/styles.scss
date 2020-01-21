@@ -30,7 +30,11 @@ $icon:#5690F5;
     height: 60px;
   }
 }
-
+//mofifier la position de profile et deconnexion
+#username, #deconnexion {
+	float: right;
+	color: $icon;
+}
 /* design de la partie content :*/
 .content {
   h1 {
