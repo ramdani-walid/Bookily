@@ -1,14 +1,7 @@
 {% extends "pages/base.html" %}
-
 {% block content %}
 <div class="ui raised very padded text container segment">
-  {% if messages %}
-  <div class="ui success message  ">
-      {% for message in messages %}
-        <p {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }} {{user.username}} </p>
-      {% endfor %}
-  </div>
-  {% endif %}
+  <p>Les services proposés:</p>
   <form class="ui fluid form" method="post" action=".">
       {% csrf_token %}
       <div class="ui field">

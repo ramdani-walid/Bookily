@@ -1,0 +1,17 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<div class="ui raised very padded text container segment">
+    {% csrf_token %}
+    <div class="ui field">
+      {{structure.nom_struct}}
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui field">
+      {{structure.adresse_struct}}
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui field">
+      {{structure.code_postal}}
+    </div>
+</div>
+{% endblock %}

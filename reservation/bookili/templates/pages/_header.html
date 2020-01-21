@@ -6,8 +6,13 @@
     </div>
     <a href="{% url 'bookili:features' %}"class="item">Fonctionnalités</a>
     <a href="{% url 'bookili:tarifs' %}"class="item">Tarifs</a>
-    <a href="{% url 'bookili:inscription' %}"class="item">S'inscrite</a>
-    <a href="{% url 'bookili:login' %}"class="item">Se connecter</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'bookili:Profile' %}" class="item" id="username">{{user.username}}</a>
+      <a href="{% url 'bookili:deconnexion' %}"class="item" id="deconnexion">Deconnexion</a>
+    {% else %}
+      <a href="{% url 'bookili:inscription' %}"class="item">S'inscrite</a>
+      <a href="{% url 'bookili:connexion' %}"class="item">Se connecter</a>
+    {% endif %}
     <div class="ui category search item">
       <div class="ui transparent icon input">
         <input class="prompt" type="text" placeholder="Recherche...">

@@ -1,5 +1,4 @@
 {% extends "pages/base.html" %}
-
 {% block content %}
   <div class="ui raised very padded text container segment">
     <form class="ui fluid form" method="post" action=".">
@@ -8,7 +7,7 @@
         {{form}}
       </div>
       <input class="ui submit button blue" type="submit" name="valider" value="valider">
-    <p>vous avez déja un compte? <a href="{% url 'bookili:connexion' %}">connecter vous</a></p>
+      <a href="{% url 'bookili:inscription' %}">inscrivez vous</a>
     </form>
   </div>
 {% endblock %}
