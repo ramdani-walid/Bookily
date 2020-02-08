@@ -1,0 +1,3 @@
+*.pyc
+reservation/bookili/migrations/*.py
+reservation/bookili/migrations/__pycache__/*.pyc
