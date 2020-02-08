@@ -30,8 +30,10 @@ class Client(models.Model):
     numero_telephone = models.IntegerField(db_column='NUMERO_TELEPHONE', blank=True, null=True)  # Field name made lowercase.
     mot_de_passe_client = models.CharField(db_column='MOT_DE_PASSE_CLIENT', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
+    def __str__(self):
+        return self.nom_client
     class Meta:
-        managed = False
+        managed = True
         db_table = 'CLIENT'
 
 
@@ -69,7 +71,8 @@ class Rdv(models.Model):
 class Service(models.Model):
     idservice = models.AutoField(db_column='idSERVICE', primary_key=True)  # Field name made lowercase.
     nom_service = models.CharField(db_column='NOM_SERVICE', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    duree_service = models.TimeField(db_column='DUREE_SERVICE',blank=True, null=True)  # Field name made lowercase.
+    debut_service = models.TimeField(db_column='DEBUT_SERVICE',blank=True, null=True)  # Field name made lowercase.
+    fin_service = models.TimeField(db_column='FIN_SERVICE',blank=True, null=False)  # Field name made lowercase.
     structure_idstructure = models.ForeignKey('Structure', models.DO_NOTHING, db_column='STRUCTURE_idSTRUCTURE')  # Field name made lowercase.
     userpropr_id = models.ForeignKey(User,on_delete=models.CASCADE)
 
@@ -96,7 +99,10 @@ class Staff(models.Model):
     nom_staff = models.CharField(db_column='NOM_STAFF', max_length=45, blank=True, null=True)  # Field name made lowercase.
     prenom_staff = models.CharField(db_column='PRENOM_STAFF', max_length=45, blank=True, null=True)  # Field name made lowercase.
     structure_idstructure = models.ForeignKey('Structure', models.DO_NOTHING, db_column='STRUCTURE_idSTRUCTURE')  # Field name made lowercase.
+    userpropr_id = models.ForeignKey(User,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nom_staff
     class Meta:
         managed = True
         db_table = 'STAFF'
@@ -112,6 +118,7 @@ class Structure(models.Model):
 
     def __str__(self):
         return self.nom_struct
+
     class Meta:
         managed = True
         db_table = 'STRUCTURE'

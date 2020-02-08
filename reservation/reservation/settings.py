@@ -24,7 +24,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +36,15 @@ INSTALLED_APPS = [
     #extension de django
     'django_extensions',
     'bookili.apps.BookiliConfig',
+
+     # The following apps are required:
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+
 ]
 # AUTH_USER_MODEL='bookili.'
 
@@ -93,7 +101,6 @@ DATABASES = {
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
-
 }
 
 
@@ -137,3 +144,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
  ]
+
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+SITE_ID = 1
+
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_USERNAME_REQUIRED = False
+
+LOGIN_REDIRECT_URL ='/bookili/profile'
