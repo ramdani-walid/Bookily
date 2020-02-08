@@ -1,0 +1,28 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<div class="ui raised very padded text container segment">
+  {% for stf in staff %}
+  <table class="ui definition table">
+  <tbody>
+    <tr>
+      <td class="two wide column">id staff</td>
+      <td>{{stf.idstaff}}</td>
+    </tr>
+    <tr>
+      <td>nom de staff</td>
+      <td>{{stf.nom_staff}}</td>
+    </tr>
+    <tr>
+      <td>Prenom de staff</td>
+      <td>{{stf.prenom_staff}}</td>
+    </tr>
+    <tr>
+      <td>structure</td>
+      <td>{{stf.structure_idstructure}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="ui divider"></div>
+</div>
+{%endfor%}
+{% endblock %}

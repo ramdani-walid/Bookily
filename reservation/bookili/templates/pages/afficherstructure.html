@@ -2,16 +2,45 @@
 {% block content %}
 <div class="ui raised very padded text container segment">
     {% csrf_token %}
+      <p>Ma structure</p>
+    {% for struct in structure %}
     <div class="ui field">
-      {{structure.nom_struct}}
+      {{struct.nom_struct}}
     </div>
     <div class="ui divider"></div>
     <div class="ui field">
-      {{structure.adresse_struct}}
+      {{struct.adresse_struct}}
     </div>
     <div class="ui divider"></div>
     <div class="ui field">
-      {{structure.code_postal}}
+      {{struct.code_postal}}
     </div>
+    {% empty %}
+    <a href="{% url 'bookili:structure' %}">créez votre structure</a>
+    {%endfor%}
+    <div class="ui divider"></div>
+      <p>Mon staff</p>
+    <table class="ui definition table">
+  <tbody>
+    {% for serv in service %}
+    <tr>
+      <td class="two wide column">id service</td>
+      <td>{{serv.idservice}}</td>
+    </tr>
+    <tr>
+      <td>nom de service</td>
+      <td>{{serv.nom_service}}</td>
+    </tr>
+    <tr>
+      <td>duree de service</td>
+      <td>{{serv.debut_service}}</td>
+    </tr>
+    <tr>
+      <td>fin service</td>
+      <td>{{serv.fin_service}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
 </div>
 {% endblock %}

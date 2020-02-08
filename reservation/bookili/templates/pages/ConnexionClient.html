@@ -1,15 +1,18 @@
 {% extends "pages/base.html" %}
-{% load socialaccount %}
 {% block content %}
   <div class="ui raised very padded text container segment">
     <form class="ui fluid form" method="post" action=".">
       {% csrf_token %}
-      <div class="ui field">
-        {{form}}
+      <h2 style="text-align:center;margin-bottom:1.5em;">Client</h2>
+      <div class="ui field">Email
+        {{form.email}}
+      </div>
+      <div class="ui divided "></div>
+      <div class="ui field">Mot de passe
+        {{form.mot_de_passe_client}}
       </div>
       <input class="ui submit button blue" type="submit" name="valider" value="valider">
-    <p>vous avez déja un compte? <a href="{% url 'bookili:connexion' %}">connecter vous</a></p>
-    <a href="{% provider_login_url 'google' %}">connectez vous avec Gmail</a>
+      <a href="{% url 'bookili:InscriptionClient' %}">inscrivez vous</a></p>
     </form>
   </div>
 {% endblock %}

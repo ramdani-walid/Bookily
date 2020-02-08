@@ -2,9 +2,7 @@
 {% block content %}
 <div class="ui raised very padded text container segment">
     {% csrf_token %}
-    <div class="ui field">
-      {{profil.id}}
-    </div>
+    <p>Informations personnelles</p>
     <div class="ui divider"></div>
     <div class="ui field">
       {{profil.username}}
@@ -14,6 +12,8 @@
       {{profil.email}}
     </div>
     <div class="ui divider"></div>
-    <a href="{% url 'bookili:AfficherStructure' profil.id %}"class="item" id="structure">Structure</a>
+    <a href="{% url 'bookili:AfficherStructure' profil.id %}"class="item" id="structure">Ma Structure</a>
+    <div class="ui divider"></div>
+    <a href="{% url 'bookili:AfficherStaff' profil.id %}"class="item" id="staff">Mon staff</a>
 </div>
 {% endblock %}

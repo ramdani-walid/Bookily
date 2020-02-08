@@ -9,6 +9,21 @@
     <h2> <span>Plus de rendez-vous, moins de planifications </span> </br> </br>
       Le calendrier des planifications et le téléphone ne répondent plus aux besoins de vos clients.</br>
       Passez à un système de réservation puissant et simple.</h2>
+    <div class="content-compte">
+      <h1>créer votre compte</h1>
+      <div class="content-compte-owner">
+          <a href="{% url 'bookili:connexion' %}">Propriétaire</a>
+      </div>
+      <div class="content-compte-client">
+          <a href="{% url 'bookili:InscriptionClient' %}">Client</a>
+      </div>
+      <div class="content-image-owner">
+        <img src="{% static "images/owner.jpg"%}" alt="">
+      </div>
+      <div class="content-image-client">
+        <img src="{% static "images/client.png"%}" alt="">
+      </div>
+    </div>
     <div class="content-fonction">
       <h1>Fonctionnalités</h1>
       <div class="content-fonction-items" clearfix>
