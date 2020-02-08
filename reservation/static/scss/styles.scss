@@ -28,13 +28,48 @@ $icon:#5690F5;
   border-bottom: 4px solid $border-bottom;
   .ui.menu {
     height: 60px;
+		.type-compte {
+			height:300px;
+			width: 150px;
+			position: relative;
+			// background-color: blue;
+			ul {
+				display: inline-block;
+				position: absolute;
+				width: 150px;
+				height:110px;
+				background-color: #FCFCFC;
+				visibility: hidden;
+				// opacity:2;
+				// border: 1px solid grey;
+			}
+			ul > li {
+				margin-left:-20px;
+				margin-top:0.7em;
+				text-decoration: none;
+				list-style: none;
+			}
+			ul > li:first-child{
+				margin-top:-1.2em;
+			}
+			a#login.item {
+				line-height:2.4em;
+				width:auto;
+			}
+
+		}
+		.type-compte:hover .ui.raised {
+			visibility: visible;
+		}
   }
 }
+
 //mofifier la position de profile et deconnexion
-#username, #deconnexion {
+#username, #logout {
 	float: right;
 	color: $icon;
 }
+
 /* design de la partie content :*/
 .content {
   h1 {
@@ -86,6 +121,40 @@ $icon:#5690F5;
       }
     }
   }
+	.content-compte {
+		margin-top:2em;
+		height:400px;
+		// width:80%;
+		h1 {
+	    text-align: center;
+	    font-size:5em;
+	  }
+		.content-compte-owner {
+			margin-left: 20em;
+			display: inline-block;
+			float: left;
+			a { font-size:1.5em;}
+		}
+		.content-compte-client {
+			margin-right: 20em;
+			display: inline-block;
+			float: right;
+			a { font-size:1.5em;}
+
+		}
+		.content-image-owner {
+			margin-top: 3em;
+			margin-left: -15em;
+			display: inline-block;
+			float: left;
+		}
+		.content-image-client {
+			margin-top:3em;
+			margin-right:-15em;
+			display: inline-block;
+			float: right;
+		}
+	}
 }
 .structure-items{
 	margin-top: 5em;
@@ -188,3 +257,39 @@ $icon:#5690F5;
 		text-align: center;
 	}
 }
+
+//design partie 'all users and structures (recherchestaff.html)'
+.allusers{
+	margin-top: 5em;
+	width: 1000px;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 2px 4px 0 rgba(34,35,38,.12);
+	box-shadow: 0 2px 13px 0 rgba(34,35,38,.15);
+	border:1px solid rgba(34,35,38,.15);
+	border-radius:0.3em;
+}
+
+.allusers .ui.items {
+	width:90%;
+	margin-left:3em;
+	.item {
+		margin-top:1.5em;
+		margin-bottom: 1em;
+	}
+	.item:first-child{
+		margin-top:3em;
+		margin-bottom: 0em;
+	}
+	.item .middle.aligned.content{
+		.header {
+			font-size:25px;
+		}
+		p {
+			font-size: 15px;
+		}
+	}
+}
+//fin partie 'recherchestaff.html'
